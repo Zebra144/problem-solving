@@ -14,6 +14,7 @@ int main()
 
 
     int arr[5][5];
+    
     int brr[3][3];
     mem(arr,0);
 

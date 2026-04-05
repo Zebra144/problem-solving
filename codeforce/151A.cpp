@@ -25,6 +25,7 @@ int cc=p/np;
 
 
 
+
  cout << min(min(dd, bb), cc) / n << endl;
 
 
