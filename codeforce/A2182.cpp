@@ -138,34 +138,31 @@ int main()
     while (t--)
     {
         int n;
-        cin>>n;
+        int cnt= 0;
+        cin >> n;
+        string a;
+        cin>>a;
+        for(int i = 0 ; i< n-3; i++)
+        {
+            if(a[i]=='2' && a[i+1]=='0'&& a[i+2]=='2' && a[i+3]=='5')
+            {
+                cnt =1;
 
-        map<int, int> freq;
-        //vi v;
-        int v[n+123];
-        for(int i=1;i<=n;i++){
+               }
+                if(a[i]=='2' && a[i+1]=='0'&& a[i+2]=='2' && a[i+3]=='6')
+                    {
+                        cnt=0;
+                        break;
 
-            cin >>v[i];
-            freq[v[i]]++ ;
+                    }
+
+
+
         }
+        if(!cnt)cout<<0<<endl;
+        else cout<<1<<endl;
 
-       int cnt=0;
-      for (auto it = freq.begin(); it != freq.end(); it++)
-{
-    //cout << it->first << " " << it->second << endl;
-    if((it->first >it->second)){
-            cnt= it->second+cnt;
-       // cout<<"1   "<<cnt<<endl;
     }
-    else if((it->first < it->second)){
-            cnt=cnt+(it->second-it->first);
-       // cout<<" 2   "<<cnt<<endl;
-    }
-
-}
-cout<<cnt<<endl;
-    }
-
     return 0;
 }
 
@@ -173,3 +170,4 @@ cout<<cnt<<endl;
 
 
 
+ 
