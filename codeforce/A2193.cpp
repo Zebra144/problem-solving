@@ -136,35 +136,29 @@ int main()
     cin >> t;
 
     while (t--)
-   {
-        int n,k;
-        cin >> n>>k;
+    {
+       int n,m,k;cin>>n>>m>>k;
+        int arr[n+12];
+       int cnt =0;
+       for(int i=0;i<n;i++){
+        cin>>arr[i];
+        cnt+=arr[i];
 
-        vector<int> arr(n);
-        map <int ,int>freq;
-        for (int i = 0; i < n; i++)
-        {
-            cin >> arr[i];
-            freq[arr[i]]++;
-        }
-        sort(all(arr));
-        arr.erase(unique(arr.begin(), arr.end()), arr.end());
-        int cnt =0;
+       }
 
-        for(int i= 0 ;i<k;i++){
-            if(freq[i]==0){
-
-                cnt++;
-
-            }
+       for(int i=0;i<100;i++){
+        if(cnt>=m)break;
+        cnt+=k;
+       }
+       if(cnt==m)cout<<"YES"<<endl;
+       else cout<<"NO"<<endl;
 
 
-        }
 
-        cout<<max(freq[k],cnt)<<endl;
 
 
     }
+
     return 0;
 }
 
@@ -172,3 +166,6 @@ int main()
 
 
 
+
+
+ 
