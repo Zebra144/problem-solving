@@ -137,36 +137,31 @@ int main()
 
     while (t--)
     {
-        int n,m,k;
-        cin>>n;
+       int n,m;cin>>n>>m;
 
-        int g[n+123][n+123];
-        int p[n+n+123] = {0};
-        for(int i = 1; i<=n; i++)
-        {
-            for(int j=1; j<=n; j++)
-            {
-                cin>>g[i][j];
-                p[i+j]=g[i][j];
-            }
-        }
-        int cnt=0;
-        int cnt1=0;
-        for(int i = 1 ; i<=2*n; i++)
-        {
-            cnt+=p[i];
-            cnt1+=i;
-        }
-        cnt1=cnt1-cnt;
+       if(m==0){
+        for(int i=n;i>0;i--){
+            cout<<i<<" ";
+       }
+       }
 
-        p[1]=cnt1;
+       if(m!=0){
+        for(int i=n-m;i<=n;i++){
+            cout<<i<<" ";
+       }
 
-        for(int i = 1 ; i<=2*n; i++)
-        {
-            cout<<p[i]<<" ";
+       for(int j=n-m-1;j>0;j--)
+       {
+           cout<<j<<" ";
+       }
+       }
 
-        }
-        cout<<endl;
+
+
+       cout <<endl;
+
+
+
     }
 
     return 0;
