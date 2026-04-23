@@ -137,27 +137,45 @@ int main()
 
     while (t--)
     {
-       int n,m,k;cin>>n>>m>>k;
-        int arr[n+12];
-       int cnt =0;
-       for(int i=0;i<n;i++){
-        cin>>arr[i];
-        cnt+=arr[i];
+        int n,m,k;
+        cin>>n;
 
-       }
+        int g[n+123][n+123];
+        int p[n+n+123] = {0};
+        for(int i = 1; i<=n; i++)
+        {
+            for(int j=1; j<=n; j++)
+            {
+                cin>>g[i][j];
+                p[i+j]=g[i][j];
+            }
+        }
+        int cnt=0;
+        int cnt1=0;
+        for(int i = 1 ; i<=2*n; i++)
+        {
+            cnt+=p[i];
+            cnt1+=i;
+        }
+        cnt1=cnt1-cnt;
 
-       for(int i=0;i<100;i++){
-        if(cnt>=m)break;
-        cnt+=k;
-       }
-       if(cnt==m)cout<<"YES"<<endl;
-       else cout<<"NO"<<endl;
+        p[1]=cnt1;
 
+        for(int i = 1 ; i<=2*n; i++)
+        {
+            cout<<p[i]<<" ";
 
-
-
-
+        }
+        cout<<endl;
     }
 
     return 0;
 }
+
+
+
+
+
+
+
+ 
